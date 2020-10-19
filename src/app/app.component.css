@@ -5,9 +5,45 @@
 .config-card {
     max-width: 300px;
     max-height: 400px;
+    background-color: rgb(240, 245, 245);
 }
 
 .humidity-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-text {
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.align-left {
+    float: left;
+    text-align: left;
+    width: 20px;
+}
+
+.align-right {
+    float: right;
+    text-align: right;
+    width: 20px;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.rounded-centered {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
