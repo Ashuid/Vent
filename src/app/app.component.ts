@@ -17,4 +17,24 @@ export class AppComponent {
   formatTemperatureLabel(value: number) {
     return value + "\u00B0";
   }
+
+  formatLightsLabel(value: number) {
+    var text = "";
+    switch (value) {
+      case 0:
+        text = "Off"
+        break;
+      case 1: 
+        text = "Dim"
+        break;
+      case 2:
+        text = "Norm"
+        break;
+      case 3:
+        text = "Full"
+        break;
+    }
+    return text;
+  }
 }
+
