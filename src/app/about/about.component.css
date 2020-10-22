@@ -1,0 +1,16 @@
+mat-expansion-panel{
+    margin: 0 10%;
+}
+
+h2{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+.paragraph{
+    width: 50%;
+    font-size: 1.3rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}

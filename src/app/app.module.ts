@@ -8,12 +8,14 @@ import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './login/login.component';
 import { ControlPanelComponent } from './control-panel/controlpanel.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
