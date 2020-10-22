@@ -1,0 +1,64 @@
+<div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="15px" fxLayoutGap.xs="2px">
+    <mat-card class="config-card" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
+        <div>
+            <h2 class="centered-text">Humidity</h2>
+        </div>
+        <div>
+            <img class="rounded-centered" src="https://www.flaticon.com/svg/static/icons/svg/694/694056.svg" height="100px" width="100px">
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatHumidity" tickInterval="1" min="0" max="50" (input)="humidityChange($event)"></mat-slider>
+            </div>
+            <div>
+                <label class="align-left">min</label>
+                <span class="example-spacer"></span>
+                <label class="align-right">max</label>
+            </div>
+        </div>
+        <h1 class="centered-text">{{humidity}}</h1>
+    </mat-card>
+
+    <mat-card class="config-card" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
+        <div>
+            <h2 class="centered-text">Temperature</h2>
+        </div>
+        <div>
+            <img class="rounded-centered" src="https://www.flaticon.com/svg/static/icons/svg/803/803469.svg" height="100px" width="100px">
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatTemperature" step="0.5" tickInterval="0.1" min="18" max="26" (input)="temperatureChange($event)"></mat-slider>
+            </div>
+            <div>
+                <label class="align-left">min</label>
+                <span class="example-spacer"></span>
+                <label class="align-right">max</label>
+            </div>
+        </div>
+        <h1 class="centered-text">{{temperature}}</h1>
+    </mat-card>
+
+    <mat-card class="config-card" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
+        <div>
+            <h2 class="centered-text">Lights</h2>
+        </div>
+        <div>
+            <img class="rounded-centered" src="https://www.flaticon.com/svg/static/icons/svg/117/117944.svg" height="100px" width="100px">
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatLights" tickInterval="1" min="0" max="3" (input)="lightsChange($event)"></mat-slider>
+            </div>
+            <div>
+                <label class="align-left">min</label>
+                <span class="example-spacer"></span>
+                <label class="align-right">max</label>
+            </div>
+        </div>
+        <h1 class="centered-text">{{lights}}</h1>
+    </mat-card>
+</div>
