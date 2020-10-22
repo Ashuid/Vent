@@ -9,6 +9,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
     exports: [
@@ -21,7 +23,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
         MatSlideToggleModule,
         MatSliderModule,
         MatDividerModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatInputModule,
+        MatFormFieldModule
     ]
 })
 export class MaterialModule { }
