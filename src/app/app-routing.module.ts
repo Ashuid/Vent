@@ -1,11 +1,25 @@
+
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ControlPanelComponent } from './control-panel/controlpanel.component';
 
+const appRoutes: Routes = [
+  { path: 'controlpanel', component: ControlPanelComponent },
+  { path: 'login',        component: LoginComponent},
+  { path: '',   redirectTo: '/login', pathMatch: 'full' },
 
-export const routing = RouterModule.forRoot([
-  {path: '', component: LoginComponent},
-  {path: 'test', component: AppComponent}
-  
-]);
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}

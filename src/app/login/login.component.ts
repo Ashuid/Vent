@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
-
+import {Router  } from '@angular/router';
 import { PasswordValidator } from '../passwordValidator';
 
 @Component({
@@ -12,7 +12,7 @@ import { PasswordValidator } from '../passwordValidator';
 export class LoginComponent {
   form: FormGroup;
 
-  constructor(fb: FormBuilder, private _loginService: LoginService) {
+  constructor(fb: FormBuilder, private _loginService: LoginService, private router: Router) {
 
     this.form = fb.group({
       username: ['', Validators.required],
@@ -25,13 +25,15 @@ export class LoginComponent {
     var result = this._loginService.login(this.form.controls['username'].value,
       this.form.controls['password'].value);
     if (result) {
-      console.log('test is passed');
+      this.router.navigate(['controlpanel'])
     }
 
     if (!result) {
       this.form.controls['password'].setErrors({
         invalidLogin: true
+        
       });
+      this.router.navigate(['login'])
     }
   }
 }
