@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { PreviewService } from '../preview.service';
 @Component({
     selector: 'control-panel',
     templateUrl: './controlpanel.component.html',
@@ -12,7 +12,7 @@ export class ControlPanelComponent {
     humidity = "Off";
     temperature = "Off";
     lights = "Off";
-
+    constructor(private pr: PreviewService) { }
     formatHumidity(value: number) {
         this.humidity = value + "%";
         return this.humidity;
@@ -60,11 +60,13 @@ export class ControlPanelComponent {
 
     setHumidity(value: number) {
         this.humidity = value + "%";
+        this.pr.humidity = this.humidity;
         return;
     }
 
     setTemperature(value: number) {
         this.temperature = value + "\u00B0";
+        this.pr.temperature = this.temperature;
         return;
     }
 
@@ -85,6 +87,7 @@ export class ControlPanelComponent {
             default:
                 break;
         }
+        this.pr.lights = this.lights;
         return;
     }
 }
