@@ -11,6 +11,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
     exports: [
@@ -25,7 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         MatDividerModule,
         FlexLayoutModule,
         MatInputModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatExpansionModule
     ]
 })
 export class MaterialModule { }

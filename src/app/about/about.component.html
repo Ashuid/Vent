@@ -1,0 +1,54 @@
+<div class="container">
+
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="About Vent2U" class="about">
+            <mat-card class="aboutCard">
+                <mat-card-title>
+                    <h2>About Vent2U</h2>
+                </mat-card-title>
+                <mat-card-content>
+                    <p class="paragraph">
+                        Vent2U is an all in one, indoor climate system that is focused on each individual persons ideal climate.
+                    </p>
+                    <p class="paragraph">
+                        Each person is different and thrive under different conditions. Those conditions can change and because of that it is important, that each person can adjust their private climate. That can ensure higher productivity and more efficient learning.
+                    </p>
+                    <p class="paragraph">
+                        With the system you can control the temperature, humidity and light levels.
+                    </p>
+
+                    <p class="paragraph">
+                        By adjusting your personal climate you can maximize your work proficiency.
+                    </p>
+                </mat-card-content>
+
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="FAQ">
+
+            <h2 class="h2Faq">Frequently Asked Questions</h2>
+            <mat-accordion>
+                <div *ngIf="questions.length > 0; else loading">
+                    <div *ngFor="let question of questions">
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{question.question}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{question.answer}}</p>
+                        </mat-expansion-panel>
+                    </div>
+                </div>
+                <ng-template #loading>
+                    <div>
+                        No questions to display
+                    </div>
+                </ng-template>
+            </mat-accordion>
+        </mat-tab>
+    </mat-tab-group>
+
+
+
+</div>
