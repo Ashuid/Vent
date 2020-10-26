@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
     selector: 'control-panel',
