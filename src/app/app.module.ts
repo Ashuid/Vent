@@ -10,13 +10,15 @@ import { ControlPanelComponent } from './control-panel/controlpanel.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { QuestionsService } from './about/questions.service';
-
+import { PreviewComponent } from './preview/preview.component';
+import {PreviewService} from './preview.service';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ControlPanelComponent,
-    AboutComponent
+    AboutComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { QuestionsService } from './about/questions.service';
     AppRoutingModule
   ],
   providers: [LoginService,
-  QuestionsService],
+  QuestionsService, PreviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
