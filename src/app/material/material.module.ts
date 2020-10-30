@@ -12,6 +12,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
         FlexLayoutModule,
         MatInputModule,
         MatFormFieldModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatTooltipModule
     ]
 })
 export class MaterialModule { }

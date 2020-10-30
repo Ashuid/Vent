@@ -2,15 +2,18 @@
     <mat-toolbar color="primary">
         <a routerLink="">Vent2U</a>
         <span class="example-spacer"></span>
-        <button routerLink="about" mat-icon-button="">
+        <button routerLink="about" mat-icon-button=""
+        matTooltip="About"  matTooltipClass="custom-tooltip">
             <mat-icon>help_outline</mat-icon>
         </button>
-        <button mat-icon-button (click) = "previewValue()">
+        <button mat-icon-button (click) = "previewValue()"
+        matTooltip="Save" matTooltipClass="custom-tooltip">
             <mat-icon>save</mat-icon>
+           
         </button>
-        <button mat-icon-button>
+        <!-- <button mat-icon-button>
             <mat-icon>settings</mat-icon>
-        </button>
+        </button> -->
     </mat-toolbar>
 </div>
 <router-outlet></router-outlet>
