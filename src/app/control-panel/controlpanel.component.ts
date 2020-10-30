@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PreviewService } from '../preview.service';
+
 @Component({
     selector: 'control-panel',
     templateUrl: './controlpanel.component.html',
@@ -8,90 +9,76 @@ import { PreviewService } from '../preview.service';
 })
 
 export class ControlPanelComponent {
-    shadowToggle = true;
-    humidity = "Off";
-    temperature = "Off";
-    lights = "Off";
     constructor(private pr: PreviewService) { }
+    shadowToggle = true;
+    humidity = this.pr.humidity || 0;
+    temperature = this.pr.temperature || 18;
+    lights = this.pr.lights || 0;
+    lightsText = this.pr.lightsText || "Off";
+
     formatHumidity(value: number) {
-        this.humidity = value + "%";
-        return this.humidity;
+        this.humidity = value;
+        return this.humidity + "%";
     }
 
     formatTemperature(value: number) {
-        this.temperature = value + "\u00B0";
-        return this.temperature;
+        this.temperature = value;
+        return this.temperature + "\u00B0";
     }
 
     formatLights(value: number) {
         switch (value) {
             case 0:
-                this.lights = "Off"
+                this.lightsText = "Off"
                 break;
             case 1:
-                this.lights = "Dim"
+                this.lightsText = "Dim"
                 break;
             case 2:
-                this.lights = "Norm"
+                this.lightsText = "Norm"
                 break;
             case 3:
-                this.lights = "Full"
+                this.lightsText = "Full"
                 break;
             default:
                 break;
         }
-        return this.lights;
+        return this.lightsText;
     }
 
     humidityChange(event: any) {
-        this.setHumidity(event.value);
-        return;
-    }
-
-    temperatureChange(event: any) {
-        this.setTemperature(event.value);
-        return;
-    }
-
-    lightsChange(event: any) {
-        this.setLights(event.value);
-        return;
-    }
-
-    setHumidity(value: number) {
-        this.humidity = value + "%";
+        this.humidity = event.value;
         this.pr.humidity = this.humidity;
         return;
     }
 
-    setTemperature(value: number) {
-        this.temperature = value + "\u00B0";
+    temperatureChange(event: any) {
+        this.temperature = event.value;
         this.pr.temperature = this.temperature;
         return;
     }
 
-    setLights(value: number) {
-        switch (value) {
+    lightsChange(event: any) {
+        this.lights = event.value;
+        this.pr.lights = this.lights;
+        switch (event.value) {
             case 0:
-                this.lights = "Off"
+                this.lightsText = "Off"
                 break;
             case 1:
-                this.lights = "Dim"
+                this.lightsText = "Dim"
                 break;
             case 2:
-                this.lights = "Norm"
+                this.lightsText = "Norm"
                 break;
             case 3:
-                this.lights = "Full"
+                this.lightsText = "Full"
                 break;
             default:
+                this.lightsText = "Error"
                 break;
         }
-        this.pr.lights = this.lights;
+        this.pr.lightsText = this.lightsText;
         return;
     }
 }
-
-
-
-

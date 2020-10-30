@@ -10,6 +10,7 @@ export class PreviewComponent implements OnInit {
   humidity = this.pr.humidity;
   temperature = this.pr.temperature;
   lights = this.pr.lights;
+  lightsText = this.pr.lightsText;
   ngOnInit(): void {
   }
 }
