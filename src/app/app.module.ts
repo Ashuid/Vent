@@ -12,13 +12,17 @@ import { AboutComponent } from './about/about.component';
 import { QuestionsService } from './about/questions.service';
 import { PreviewComponent } from './preview/preview.component';
 import {PreviewService} from './preview.service';
+import { MatSliderModule } from '@angular/material/slider';
+import { ToggleComponent } from './toggle/toggle.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ControlPanelComponent,
     AboutComponent,
-    PreviewComponent
+    PreviewComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import {PreviewService} from './preview.service';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule
   ],
   providers: [LoginService,
   QuestionsService, PreviewService],
