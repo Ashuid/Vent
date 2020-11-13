@@ -14,6 +14,8 @@ import { PreviewComponent } from './preview/preview.component';
 import {PreviewService} from './preview.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { ToggleComponent } from './toggle/toggle.component';
+import { SettingsService } from './services/settings.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { ToggleComponent } from './toggle/toggle.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [LoginService,
-  QuestionsService, PreviewService],
+  QuestionsService, PreviewService,
+  SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

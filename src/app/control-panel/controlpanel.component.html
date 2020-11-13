@@ -9,7 +9,7 @@
         <mat-divider></mat-divider>
         <div>
             <div>
-                <mat-slider class="centered" thumbLabel [displayWith]="formatHumidity" tickInterval="1" min="0" max="50" (input)="humidityChange($event)" [value]="humidity"></mat-slider>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatHumidity" tickInterval="1" min="0" max="50" (input)="humidityChange($event)" [value]="humidity" [(ngModel)]="settings.humidity"></mat-slider>
             </div>
             <div>
                 <label class="align-left">min</label>
@@ -30,7 +30,7 @@
         <mat-divider></mat-divider>
         <div>
             <div>
-                <mat-slider class="centered" thumbLabel [displayWith]="formatTemperature" step="0.5" tickInterval="0.1" min="18" max="26" (input)="temperatureChange($event)" [value]="temperature"></mat-slider>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatTemperature" step="0.5" tickInterval="0.1" min="18" max="26" (input)="temperatureChange($event)" [value]="temperature" [(ngModel)]="settings.temperature"></mat-slider>
             </div>
             <div>
                 <label class="align-left">min</label>
@@ -51,7 +51,7 @@
         <mat-divider></mat-divider>
         <div>
             <div>
-                <mat-slider class="centered" thumbLabel [displayWith]="formatLights" tickInterval="1" min="0" max="3" (input)="lightsChange($event)" [value]="lights"></mat-slider>
+                <mat-slider class="centered" thumbLabel [displayWith]="formatLights" tickInterval="1" min="0" max="3" (input)="lightsChange($event)" [value]="lights" [(ngModel)]="settings.lights"></mat-slider>
             </div>
             <div>
                 <label class="align-left">min</label>
@@ -62,3 +62,13 @@
         <h1 class="centered-text">{{lightsText}}</h1>
     </mat-card>
 </div>
+
+<button (click)="saveSettings()">Settings</button>
+
+<ul>
+    <li
+    *ngFor="let setting of settings"
+    >
+        {{ setting.humidity }}
+    </li>
+</ul>
