@@ -15,4 +15,10 @@ export class SettingsService {
         return this.http.post(baseUrl, data);
       }
 
+      getAll() {
+          return this.http.get(baseUrl)
+      }
+      delete(id) {
+        return this.http.delete(`${baseUrl}/${id}`);
+      }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PreviewService } from '../preview.service';
 import { SettingsService } from '../services/settings.service';
 
@@ -10,7 +10,7 @@ import { SettingsService } from '../services/settings.service';
 
 })
 
-export class ControlPanelComponent {
+export class ControlPanelComponent implements OnInit {
     constructor(private settingsService: SettingsService) { }
     shadowToggle = true;
     humidity = 0;
@@ -24,6 +24,10 @@ export class ControlPanelComponent {
         humidity: this.humidity,
         lights: this.lightsText
     };
+
+    ngOnInit() {
+        this.retrieveSettings();
+    }
 
     formatHumidity(value: number) {
         this.humidity = value;
@@ -98,10 +102,34 @@ export class ControlPanelComponent {
             response => {
                 console.log(response);
                 this.submitted = true;
+                this.retrieveSettings();
             },
             error => {
                 console.log(error);
             }
         );
     }
+    retrieveSettings() {
+        this.settingsService.getAll()
+          .subscribe(
+            data => {
+              this.settings = data;
+              console.log(data);
+            },
+            error => {
+              console.log(error);
+            });
+      }
+    deleteSettings(settingid) {
+        const settingsID = settingid;
+        this.settingsService.delete(settingsID)
+          .subscribe(
+            response => {
+              console.log(response);
+              this.retrieveSettings();
+            },
+            error => {
+              console.log(error);
+            });
+      }
 }
