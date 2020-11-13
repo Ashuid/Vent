@@ -1,20 +1,29 @@
 import { Component } from '@angular/core';
 import { PreviewService } from '../preview.service';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
     selector: 'control-panel',
     templateUrl: './controlpanel.component.html',
-    styleUrls: ['./controlpanel.component.css']
+    styleUrls: ['./controlpanel.component.css'],
+    providers: [SettingsService]
 
 })
 
 export class ControlPanelComponent {
-    constructor(private pr: PreviewService) { }
+    constructor(private settingsService: SettingsService) { }
     shadowToggle = true;
-    humidity = this.pr.humidity || 0;
-    temperature = this.pr.temperature || 18;
-    lights = this.pr.lights || 0;
-    lightsText = this.pr.lightsText || "Off";
+    humidity = 0;
+    temperature = 18;
+    lights = 0;
+    lightsText = "Off";
+    submitted = false;
+
+    settings = {
+        temperature: this.temperature,
+        humidity: this.humidity,
+        lights: this.lightsText
+    };
 
     formatHumidity(value: number) {
         this.humidity = value;
@@ -48,19 +57,16 @@ export class ControlPanelComponent {
 
     humidityChange(event: any) {
         this.humidity = event.value;
-        this.pr.humidity = this.humidity;
         return;
     }
 
     temperatureChange(event: any) {
         this.temperature = event.value;
-        this.pr.temperature = this.temperature;
         return;
     }
 
     lightsChange(event: any) {
         this.lights = event.value;
-        this.pr.lights = this.lights;
         switch (event.value) {
             case 0:
                 this.lightsText = "Off"
@@ -78,7 +84,24 @@ export class ControlPanelComponent {
                 this.lightsText = "Error"
                 break;
         }
-        this.pr.lightsText = this.lightsText;
         return;
+    }
+    saveSettings(){
+        const data = {
+            temperature: this.temperature,
+            humidity: this.humidity,
+            lights: this.lights,
+            uid: 1
+        }
+        this.settingsService.create(data)
+        .subscribe(
+            response => {
+                console.log(response);
+                this.submitted = true;
+            },
+            error => {
+                console.log(error);
+            }
+        );
     }
 }
