@@ -71,7 +71,7 @@
     <li
     *ngFor="let setting of settings"
     class="listSettings" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
-        <button class="material-icons" mat-icon-button=""><mat-icon>play_circle_filled</mat-icon></button>
+        <button class="material-icons" mat-icon-button="" (click)="useSettings(setting)"><mat-icon>play_circle_filled</mat-icon></button>
         <h3>Humidity: {{ setting.humidity }}</h3>
         <h3>Temperature: {{ setting.temperature }}</h3>
         <h3>Light: {{ setting.light }}</h3>

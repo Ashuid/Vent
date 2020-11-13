@@ -22,7 +22,7 @@ export class ControlPanelComponent implements OnInit {
     settings = {
         temperature: this.temperature,
         humidity: this.humidity,
-        lights: this.lightsText
+        lights: this.lights
     };
 
     ngOnInit() {
@@ -94,7 +94,7 @@ export class ControlPanelComponent implements OnInit {
         const data = {
             temperature: this.temperature,
             humidity: this.humidity,
-            lights: this.lights,
+            light: this.lights,
             uid: 1
         }
         this.settingsService.create(data)
@@ -132,4 +132,12 @@ export class ControlPanelComponent implements OnInit {
               console.log(error);
             });
       }
+    
+    useSettings(data){
+        this.humidity = data.humidity;
+        this.temperature = data.temperature;
+        this.lights = data.light;
+        this.formatLights(data.light);
+        //this.lightsChange(light)
+    }
 }
