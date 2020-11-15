@@ -5,10 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ControlPanelComponent } from './control-panel/controlpanel.component';
 import {AboutComponent} from "./about/about.component";
 import {PreviewComponent} from './preview/preview.component';
+import {RegistrationComponent} from './registration/registration.component';
+
 const appRoutes: Routes = [
   { path: 'controlpanel', component: ControlPanelComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login',        component: LoginComponent},
+  { path: 'register',        component: RegistrationComponent},
   { path: 'preview',       component: PreviewComponent},
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
 
