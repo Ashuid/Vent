@@ -1,6 +1,6 @@
 <mat-card id="logincard">
-  <mat-card-title>
-    <mat-icon class="usericon" aria-hidden="false" aria-label="user icon">account_box</mat-icon>
+  <mat-card-title id="userinfo">
+   Login
   </mat-card-title>
   <form [formGroup]="form" (ngSubmit)="login()">
     <div class="form-group">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="user-button">
-      <button type="submit" mat-button>Login</button>
+      <button class="user-button" type="submit" mat-button>Login</button>
     </div>
     <button class="register-button" type="submit" (click)="register()" mat-button>New User ? Register</button>
   </form>
