@@ -63,12 +63,18 @@
     </mat-card>
 </div>
 
-<button (click)="saveSettings()">Settings</button>
+<button class="saveButton" (click)="saveSettings()" mat-button>Save preset</button>
 
+
+<h2>Your saved presets</h2>
 <ul>
     <li
     *ngFor="let setting of settings"
-    >
-        {{ setting.humidity }}
+    class="listSettings" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
+        <button class="material-icons" mat-icon-button="" (click)="useSettings(setting)"><mat-icon>play_circle_filled</mat-icon></button>
+        <h3>Humidity: {{ setting.humidity }}</h3>
+        <h3>Temperature: {{ setting.temperature }}</h3>
+        <h3>Light: {{ setting.light }}</h3>
+        <button (click)="deleteSettings(setting.id)" class="material-icons" mat-icon-button=""><mat-icon>delete_forever</mat-icon></button>
     </li>
 </ul>
