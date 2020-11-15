@@ -40,6 +40,7 @@ export class RegistrationComponent implements OnInit {
         console.log(response.password)
         if (response.username === userData.username) {
          alert('Registration Success. Please Login to user Services')
+         this.router.navigate(['login'])
         }
       },
       (error) => {
