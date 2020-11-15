@@ -19,7 +19,7 @@ export class ControlPanelComponent implements OnInit {
     lightsText = "Off";
     submitted = false;
 
-    settings = {
+    settings: any = {
         temperature: this.temperature,
         humidity: this.humidity,
         lights: this.lights
