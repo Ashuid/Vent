@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LoginService } from "./login.service";
+import { LoginService } from "./services/login.service";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ToggleComponent } from './toggle/toggle.component';
 import { SettingsService } from './services/settings.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     ControlPanelComponent,
     AboutComponent,
     PreviewComponent,
-    ToggleComponent
+    ToggleComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     AppRoutingModule,
     MatSliderModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [LoginService,
   QuestionsService, PreviewService,
