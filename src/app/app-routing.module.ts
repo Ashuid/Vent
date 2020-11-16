@@ -8,7 +8,7 @@ import {PreviewComponent} from './preview/preview.component';
 import {RegistrationComponent} from './registration/registration.component';
 
 const appRoutes: Routes = [
-  { path: 'controlpanel', component: ControlPanelComponent },
+  { path: 'controlpanel/:id', component: ControlPanelComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login',        component: LoginComponent},
   { path: 'register',        component: RegistrationComponent},

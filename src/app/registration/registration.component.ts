@@ -37,7 +37,6 @@ export class RegistrationComponent implements OnInit {
     this._registerService.userRegistration(userData).subscribe(
       (data) => {
         let response: any = data;
-        console.log(response.password)
         if (response.username === userData.username) {
          alert('Registration Success. Please Login to user Services')
          this.router.navigate(['login'])
