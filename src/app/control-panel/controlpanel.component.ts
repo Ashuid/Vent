@@ -126,7 +126,6 @@ export class ControlPanelComponent implements OnInit {
     );
   }
   deleteSettings(id) {
-    id = this.uid;
     this.settingsService.delete(id).subscribe(
       (response) => {
         console.log(response);
