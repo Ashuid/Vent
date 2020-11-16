@@ -36,11 +36,11 @@ export class LoginComponent {
 
     this._loginService.userlogin(userData.username).subscribe((data) => {
       let response: any = data;
-      console.log(response[0].password);
+      console.log(response);
       bcrypt.compare(userData.password, response[0].password, (err, Data) => {
         console.log('fdfdfr', Data);
         if (Data) {
-          this.router.navigate(['controlpanel']);
+          this.router.navigate(['controlpanel/' + response[0].id]);
         } else {
           alert('You have entered wrong credentials');
         }
