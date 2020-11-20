@@ -14,6 +14,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SettingsService } from './services/settings.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,7 @@ import { RegistrationComponent } from './registration/registration.component';
 
   ],
   providers: [LoginService,
-    QuestionsService,
-    SettingsService],
+  QuestionsService, SettingsService, RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

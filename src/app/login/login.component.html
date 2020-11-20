@@ -35,7 +35,21 @@
         <div class="user-button">
             <button class="user-button" type="submit" mat-button>Login</button>
         </div>
-        <button class="register-button" type="submit" (click)="register()" mat-button>New User ? Register</button>
-    </form>
-
+      </div>
+      <mat-form-field appearance="fill"
+      [hideRequiredMarker]="hideRequiredControl.value"
+      [floatLabel]="floatLabelControl.value">
+    <mat-select required>
+      <div *ngFor="let room of rooms">
+        <mat-option value="options">{{ room.id }}</mat-option>
+      </div>
+      </mat-select>
+      <mat-label>Select your room</mat-label>
+    </mat-form-field>
+    </div>
+    <div class="user-button">
+      <button class="user-button" type="submit" mat-button>Login</button>
+    </div>
+    <button class="register-button" type="submit" (click)="register()" mat-button>New User ? Register</button>
+  </form>
 </mat-card>
