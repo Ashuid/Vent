@@ -9,6 +9,7 @@ import { PasswordValidator } from '../passwordValidator';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
 })
+
 export class RegistrationComponent implements OnInit {
   form: FormGroup;
   submitted = false;
@@ -28,7 +29,9 @@ export class RegistrationComponent implements OnInit {
       ],
     });
   }
-  ngOnInit(): void {}
+
+  ngOnInit(): void { }
+  
   register() {
     const userData = {
       username: this.form.controls['username'].value,
@@ -38,8 +41,8 @@ export class RegistrationComponent implements OnInit {
       (data) => {
         let response: any = data;
         if (response.username === userData.username) {
-         alert('Registration Success. Please Login to user Services')
-         this.router.navigate(['login'])
+          alert('Registration Success. Please Login to user Services')
+          this.router.navigate(['login'])
         }
       },
       (error) => {
