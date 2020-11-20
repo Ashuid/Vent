@@ -17,6 +17,7 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { SettingsService } from './services/settings.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { RegistrationComponent } from './registration/registration.component';
   ],
   providers: [LoginService,
   QuestionsService, PreviewService,
-  SettingsService],
+  SettingsService, RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
