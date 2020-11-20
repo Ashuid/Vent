@@ -6,8 +6,9 @@ const baseUrl = 'http://localhost:8080/api/settings';
 @Injectable({
   providedIn: 'root',
 })
+
 export class SettingsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   create(data) {
     return this.http.post(baseUrl, data);

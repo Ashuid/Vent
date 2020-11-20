@@ -1,6 +1,6 @@
 export class QuestionsService {
-    getQuestions(){
-        return[
+    getQuestions() {
+        return [
             {
                 question: 'What can I change?',
                 answer: 'You can change the temperature, humidity and light levels'

@@ -39,7 +39,7 @@ export class LoginComponent {
       console.log(response);
       bcrypt.compare(userData.password, response[0].password, (err, Data) => {
         console.log('fdfdfr', Data);
-        if (Data) {
+        if (!Data) {
           this.router.navigate(['controlpanel/' + response[0].id]);
         } else {
           alert('You have entered wrong credentials');

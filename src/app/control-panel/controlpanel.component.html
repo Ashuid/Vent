@@ -65,29 +65,30 @@
 
 <button class="saveButton" (click)="saveSettings()" mat-button>Save preset</button>
 
-
 <h2>Your saved presets</h2>
 <ul>
-    <li
-    *ngFor="let setting of settings"
-    class="listSettings" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
-        <button class="material-icons" mat-icon-button="" (click)="useSettings(setting)"><mat-icon>play_circle_filled</mat-icon></button>
+    <li *ngFor="let setting of settings" class="listSettings" [class.mat-elevation-z2]="!shadowToggle" [class.mat-elevation-z2]="shadowToggle">
+        <button class="material-icons" mat-icon-button="" (click)="useSettings(setting)">
+            <mat-icon>play_circle_filled</mat-icon>
+        </button>
         <h3>Humidity: {{ setting.humidity }}</h3>
         <h3>Temperature: {{ setting.temperature }}</h3>
         <div [ngSwitch]="setting.light">
-        <h3 *ngSwitchCase="0">
-        Light: Off
-        </h3>
-        <h3 *ngSwitchCase="1">
-        Light: Dim
-        </h3>
-        <h3 *ngSwitchCase="2">
-        Light: Normal
-        </h3>
-        <h3 *ngSwitchCase="3">
-        Light: Full
-        </h3>
-    </div>
-        <button (click)="deleteSettings(setting.id)" class="material-icons" mat-icon-button=""><mat-icon>delete_forever</mat-icon></button>
+            <h3 *ngSwitchCase="0">
+                Light: Off
+            </h3>
+            <h3 *ngSwitchCase="1">
+                Light: Dim
+            </h3>
+            <h3 *ngSwitchCase="2">
+                Light: Normal
+            </h3>
+            <h3 *ngSwitchCase="3">
+                Light: Full
+            </h3>
+        </div>
+        <button (click)="deleteSettings(setting.id)" class="material-icons" mat-icon-button="">
+            <mat-icon>delete_forever</mat-icon>
+        </button>
     </li>
 </ul>

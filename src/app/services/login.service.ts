@@ -6,8 +6,9 @@ const baseUrl = 'http://localhost:8080/api/users/';
 @Injectable({
   providedIn: 'root',
 })
+
 export class LoginService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   userlogin(username) {
     return this.http.get(baseUrl + `${username}`);

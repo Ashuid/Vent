@@ -4,15 +4,13 @@ import { HttpClient } from '@angular/common/http';
 const baseUrl = 'http://localhost:8080/api/users';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class RegisterService {
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient){}
-
-      userRegistration(data) {
-        return this.http.post(baseUrl, data);
-      }
-
+  userRegistration(data) {
+    return this.http.post(baseUrl, data);
+  }
 }
