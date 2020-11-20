@@ -1,35 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { PreviewService } from '../preview.service';
 import { SettingsService } from '../services/settings.service';
-import { map } from 'rxjs/operators';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+
 @Component({
   selector: 'control-panel',
   templateUrl: './controlpanel.component.html',
   styleUrls: ['./controlpanel.component.css'],
   providers: [SettingsService],
 })
+
 export class ControlPanelComponent implements OnInit {
   constructor(
     private settingsService: SettingsService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
+
   shadowToggle = true;
   humidity = 0;
   temperature = 18;
   lights = 0;
   lightsText = 'Off';
   submitted = false;
+  uid;
 
   settings: any = {
     temperature: this.temperature,
     humidity: this.humidity,
     lights: this.lights,
   };
-  uid;
+
   ngOnInit() {
     this.route.params.forEach((param) => (this.uid = param['id']));
-    // this.retrieveSettings();
     this.SettingByUId(this.uid);
   }
 
@@ -114,6 +115,7 @@ export class ControlPanelComponent implements OnInit {
       }
     );
   }
+
   retrieveSettings() {
     this.settingsService.getAll().subscribe(
       (data) => {
@@ -125,6 +127,7 @@ export class ControlPanelComponent implements OnInit {
       }
     );
   }
+
   deleteSettings(id) {
     this.settingsService.delete(id).subscribe(
       (response) => {
@@ -136,6 +139,7 @@ export class ControlPanelComponent implements OnInit {
       }
     );
   }
+
   SettingByUId(id) {
     id = this.uid;
     this.settingsService.getbyId(id).subscribe(
@@ -154,6 +158,5 @@ export class ControlPanelComponent implements OnInit {
     this.temperature = data.temperature;
     this.lights = data.light;
     this.formatLights(data.light);
-    //this.lightsChange(light)
   }
 }

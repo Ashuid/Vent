@@ -10,10 +10,7 @@ import { ControlPanelComponent } from './control-panel/controlpanel.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { QuestionsService } from './about/questions.service';
-import { PreviewComponent } from './preview/preview.component';
-import {PreviewService} from './preview.service';
 import { MatSliderModule } from '@angular/material/slider';
-import { ToggleComponent } from './toggle/toggle.component';
 import { SettingsService } from './services/settings.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
@@ -25,8 +22,6 @@ import { RoomService } from './services/room.service';
     LoginComponent,
     ControlPanelComponent,
     AboutComponent,
-    PreviewComponent,
-    ToggleComponent,
     RegistrationComponent,
   ],
   imports: [
@@ -41,8 +36,7 @@ import { RoomService } from './services/room.service';
 
   ],
   providers: [LoginService,
-  QuestionsService, PreviewService,
-  SettingsService, RoomService],
+  QuestionsService, SettingsService, RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

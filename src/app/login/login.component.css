@@ -2,36 +2,40 @@
     display: flex;
     justify-content: center;
     margin: 100px 0px;
-  }
+}
 
-  .mat-form-field {
+.mat-form-field {
     width: 100%;
     min-width: 300px;
-  }
+}
 
-  mat-card-title,
-  mat-card-content {
+mat-card-title,
+mat-card-content {
     display: flex;
     justify-content: center;
-  }
+}
 
-  .error {
+.error {
     padding: 16px;
     width: 300px;
     color: white;
     background-color: red;
-  }
+}
 
-  .button {
+.button {
     display: flex;
     justify-content: flex-end;
-  }
-  .mat-alert-danger {
-    color: #f44336; /* Red */
 }
-#logincard{
-  background-color: rgb(240, 245, 245);
+
+.mat-alert-danger {
+    color: #f44336;
+    /* Red */
 }
+
+#logincard {
+    background-color: rgb(240, 245, 245);
+}
+
 .user-button {
     color: white;
     width: 100%;
@@ -39,11 +43,12 @@
     display: flex;
     justify-content: center;
 }
+
 .register-button {
-  color: white;
-  width: 100%;
-  background-color: #3f51b5;
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
+    color: white;
+    width: 100%;
+    background-color: #3f51b5;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
 }
